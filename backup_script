@@ -1,0 +1,6 @@
+#!/bin/bash
+
+tar -cvf /var/backups/backup`date +%F--%H-%M`.tar /home/ivan/
+echo "Homedir backup has been created at `date +%F--%H-%M`">>/dev/pts/0
+echo "Homedir backup has been created at `date +%F--%H-%M`">>/dev/pts/3
+
