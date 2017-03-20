@@ -1,6 +1,7 @@
 #!/bin/bash
 
-tar -cvf /var/backups/backup`date +%F--%H-%M`.tar /home/ivan/
+tar -cvf /var/backups/homedir/backup`date +%F--%H-%M`.tar /home/ivan/ --exclude '/home/ivan/.mozilla/*' --exclude '/home/ivan/.cache/*' --exclude '/home/ivan/.vagrant.d/*'
+cd /var/backups/homedir && ls -t | tail -n+3 | xargs -i rm '{}'
 echo "Homedir backup has been created at `date +%F--%H-%M`">>/dev/pts/0
 echo "Homedir backup has been created at `date +%F--%H-%M`">>/dev/pts/3
 
